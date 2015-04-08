@@ -1,0 +1,12 @@
+<div style="visibility:hidden"><div class="addTabController">
+	<button data-dojo-type="dijit.form.Button" type="button"
+			id="${id}_newTabBtn"
+			showLabel="false" iconClass="fisaTabIcon newTabIcon"
+			title="${nuevoTabMensaje}" baseClass="dijitButtonFisaControl"
+			data-dojo-attach-point="_newTabBtn">
+			<script type="dojo/method" data-dojo-event="onClick" data-dojo-args="evt">
+				ec.fisa.menu.utils.addEmptyTab("${nuevoTabMensaje}");
+			</script>
+	</button>
+</div>
+</div>

@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<title>Custom Sort Test - dojox.grid.Grid</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta>
+<link rel="stylesheet" type="text/css" href="/mcm-web-render/css/themes/fisaClassic/fisaClassic.css" />
+<link rel="stylesheet" type="text/css" href="/mcm-web-render/javascript/dojo-release-1.7.2-src/ec/fisa/grid/fisaClassic.css" />
+<link rel="stylesheet" type="text/css"
+	href="/mcm-web-render/javascript/dojo-release-1.7.2-src/dojox/grid/enhanced/resources/EnhancedGrid_rtl.css" />
+		<style type="text/css">
+		body {
+			font-size: 0.9em;
+			font-family: Geneva, Arial, Helvetica, sans-serif;
+		}
+		.heading {
+			font-weight: bold;
+			padding-bottom: 0.25em;
+		}
+				
+		#grid {
+			border: 1px solid #333;
+			width: 35em;
+			height: 30em;
+		}
+	</style>
+	<script type="text/javascript" src="../../../../dojo/dojo.js" 
+		djConfig="isDebug:false, parseOnLoad: true"></script>
+	<script type="text/javascript">
+		dojo.require("ec.fisa.grid.FisaEditableGrid");
+	</script>
+</head>
+<body class="fisaClassic">
+<div class="heading">dojox.grid.Grid Custom Sort Test</div>
+<br />
+<b>Column 1</b>'s data field has a custom sorter that sorts by the status level rather than alphebetically
+<br /><br />
+<div id="grid" jsid="grid" dojoType="ec.fisa.grid.FisaEditableGrid" autoWidth="true" autoHeight="true" structure="[[
+			{name: 'Column 1', field: 'col1'},
+			{name: 'Column 2', field: 'col2'},
+			{name: 'Column 3', field: 'col3'},
+			{name: 'Column 4', field: 'col4', width: '150px'},
+			{name: 'Column 5', field: 'col5'}
+		]]"></div>
+</body>
+</html>

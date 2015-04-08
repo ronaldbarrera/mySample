@@ -1,0 +1,34 @@
+<div class="dijitDialog" role="dialog" aria-labelledby="${id}_title">
+	<div data-dojo-attach-point="titleBar" class="dijitDialogTitleBar">
+		<span data-dojo-attach-point="titleNode" class="dijitDialogTitle"
+			id="${id}_title"></span> <span
+			data-dojo-attach-point="_closeButtonNode" class="dijitDialogCloseIcon"
+			data-dojo-attach-event="ondijitclick: onCancel"
+			title="${buttonCancel}" role="button" tabIndex="-1"> <span
+			data-dojo-attach-point="closeText" class="closeText"
+			title="${buttonCancel}">x</span> </span>
+	</div>
+	<div class="dijitDialogPaneContent">
+		<div data-dojo-attach-point="containerNode"></div>
+
+
+<div id="${id}_overWriteButton" class="dijitButtonText"
+		data-dojo-attach-event='onClick:_overWriteAction'
+			data-dojo-attach-point="_overWriteDialogButton"
+			data-dojo-type="dijit.form.Button" 
+			style="float: left;" >${overWriteDialogLabel}</div>
+
+		<div id="${id}_acceptButton" class="dijitButtonText"
+		data-dojo-attach-event='onClick:_acceptAction'
+			data-dojo-attach-point="_acceptDialogButton"
+			data-dojo-type="dijit.form.Button" 
+			style="float: left;" >${acceptDialogLabel}</div>
+
+		<div id="${id}_cancelButton" class="dijitButtonText"
+		data-dojo-attach-event='onClick: _cancelAction'
+			data-dojo-attach-point="_cancelDialogButton"
+			data-dojo-type="dijit.form.Button" 
+			style="float: left;" >${cancelDialogLabel}</div>
+
+	</div>
+</div>

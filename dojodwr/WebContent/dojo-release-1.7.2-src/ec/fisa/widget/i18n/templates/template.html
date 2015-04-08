@@ -1,0 +1,35 @@
+<div data-dojo-attach-point="multilingual_container_node" class="${styleClass}">
+<table cellpadding="0" cellspacing="0" border="0"><tr>
+<td>
+	<div style="float: left;width:auto" data-dojo-attach-point="_tcn"></div>
+</td><td valign="middle">
+	<div style="float: left;" class="i18nControlBtns" data-dojo-attach-point="buttons_container_node">
+	<table cellpadding="0" cellspacing="0" border="0"><tr>
+		<td>
+			<button id="${id}_addLanguageButton_node" data-dojo-type="dijit.form.Button"
+			data-dojo-attach-point="addLanguageButton_node"
+			class="no_selection"
+			data-dojo-attach-event="onClick:_showTranslation"
+			type="button" showLabel="false"
+			iconClass="addLanguage"  ${_disabledExp}  ></button>
+		</td><td>
+			<button id="${id}_removeLanguageButton_node" data-dojo-type="dijit.form.Button"
+			data-dojo-attach-point="removeLanguageButton_node" 
+			class="no_selection"
+			data-dojo-attach-event="onClick:_removeTranslation"
+			type="button" showLabel="false"
+			iconClass="removeLanguage" ${_disabledExp}   ></button>
+		</td><td>
+			<button id="${id}_collapseLanguagesButton_node" data-dojo-type="dijit.form.Button"
+			class="no_selection"
+			data-dojo-attach-point="collapseLanguagesButton_node" type="button"
+			data-dojo-attach-event="onClick:_toggleCollapsed"
+			iconClass="expandLanguages" showLabel="false" ></button>
+		</td>
+		</tr>
+		</table>
+	</div>
+	</td>
+	</tr>
+	</table>
+</div>

@@ -1,0 +1,24 @@
+<div>
+
+	<input id="${id}_date3" readOnly value=""
+		data-dojo-attach-point="_inputDate" dojoType="dojox.mobile.TextBox"
+		placeHolder="${placeHolder}" />
+	<div id="${id}_btnPicker" data-dojo-attach-point="_buttonNode"
+		class="fisaDateIcon" dojoType="dojox.mobile.Button"
+		onclick="dijit.byId('${id}').showDialog()"></div>
+	<div id="${id}_calPicker" data-dojo-type="dojox.mobile.SimpleDialog"
+		data-dojo-attach-point="_dialog">
+		<h1 dojoType="dojox.mobile.Heading" label="${label}">
+			<span dojoType="dojox.mobile.ToolBarButton" label="${lblDone}"
+				class="${headingButtonStyleClass}" style=""
+				onclick="dijit.byId('${id}').accept()"
+				data-dojo-attach-point="_BtnDone"></span> <span
+				dojoType="dojox.mobile.ToolBarButton" label="${lblCancel}"
+				class="${headingButtonStyleClass}" style=""
+				onclick="dijit.byId('${id}').cancel()"
+				data-dojo-attach-point="_BtnCancel"></span>
+		</h1>
+		<div id="${id}_cal" data-dojo-attach-point="_cal"
+			data-dojo-type="dojox.mobile.ValuePickerDatePicker"></div>
+	</div>
+</div>

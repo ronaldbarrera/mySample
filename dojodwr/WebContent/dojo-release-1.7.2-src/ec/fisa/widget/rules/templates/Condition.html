@@ -1,0 +1,38 @@
+<tr conditionCode="${conditionCode}">
+	<td  class="${_classValue}" >
+		<div dojoType="dijit.form.TextBox"  
+		data-dojo-attach-point="_componentField"
+		readonly  style="width:140px;"  ></div>
+	</td>
+	<td  class="${_classValue}">
+		<select dojoType="dijit.form.Select" 
+		data-dojo-attach-point="_componentOperator"
+		 style="width:140px" ${_disabledExp} ></select>
+	</td >
+	<td class="${_classValue}">
+		<div dojoType="${_valueCmpType}"
+			data-dojo-attach-point="_componentValue1"
+			${_readOnlyExp}  ${_baseClassExp}  ${_isNumericExp} ${_visualSizeExp} ${_showComplementExp}
+			fisa-tab-id='${tabId}' fisa-page-scope-id='${pageScopeId}' tabId='${tabId}'  pageScopeId='${pageScopeId}' ></div>
+		
+	</td>
+	<td>
+		<div dojoType="ec.fisa.widget.OutputText"
+		data-dojo-attach-point="_componentSeparator"
+			  style="width:5px;"></div>
+	</td>
+	<td class="${_classValue}" >
+		<div dojoType="${_valueCmpType}"
+			data-dojo-attach-point="_componentValue2"
+			${_readOnlyExp}  ${_baseClassExp}  ${_isNumericExp} ${_visualSizeExp} ${_showComplementExp}
+			fisa-tab-id='${tabId}' fisa-page-scope-id='${pageScopeId}' tabId='${tabId}'  pageScopeId='${pageScopeId}'></div>
+		
+	</td>
+
+	<td >
+		<button  dojoType="dijit.form.Button" 
+			data-dojo-attach-point="_componentDeleteBotton"
+			iconClass = 'imgDelete' baseClass="fisaGridButton" showLabel="false"  ${_disabledExp}  ></button>
+	</td>	
+	
+</tr>

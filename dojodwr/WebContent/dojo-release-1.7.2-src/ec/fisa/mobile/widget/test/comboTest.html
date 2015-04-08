@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"/>
+	<meta name="apple-mobile-web-app-capable" content="yes"/>
+	<title>test Opener with Calendar</title>
+
+	<link href="../../../../../dijit/themes/dijit.css" rel="stylesheet"/>
+	<link id="themeStyles" rel="stylesheet" href="../../../../../dijit/themes/claro/claro.css"/>
+	<script type="text/javascript" src="../../../../../dojox/mobile/deviceTheme.js" data-dojo-config="mblThemeFiles: ['base','Overlay','Tooltip','dijit.Calendar']"></script>
+	<script type="text/javascript" src="../../../../../dojo/dojo.js" data-dojo-config="async: true, parseOnLoad: true"></script>
+
+	<script language="JavaScript" type="text/javascript">
+		require([
+			"ec/fisa/mobile/widget/DatePicker"
+		]);
+
+		
+	</script>
+
+	<style>
+		html, body{
+			overflow: hidden;
+		}
+		.mblTooltip.mblOpener DIV[label='Cancel'] {
+			display: none;
+		}
+	</style>
+</head>
+<body class="claro">
+	<div data-dojo-type="ec.fisa.mobile.widget.DatePicker" lblInput="Fecha" lblDone="Listo" lblCancel="Cancelar" label="Fecha" ></div>
+	<select name="select1" data-dojo-type="dijit/form/Select">
+    <option value="TN">Tennessee</option>
+    <option value="VA" selected="selected">Virginia</option>
+    <option value="WA">Washington</option>
+    <option value="FL">Florida</option>
+    <option value="CA">California</option>
+</select>
+
+</body>
+</html>

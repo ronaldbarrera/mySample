@@ -1,0 +1,30 @@
+<div>
+	<div data-dojo-attach-point="_parentPanelCnt">
+		<div class="error" data-dojo-attach-point="_errorPanelCnt" style="display:none;visibility:hidden;">
+			<div class="mblSimpleDialogTitle simpleDialogErrorLine" data-dojo-attach-point="_headerError"></div>
+			<table cellpadding="0" cellspacing="0" border="0" class="mblSimpleDialogText">
+				<tbody data-dojo-attach-point="_errorPanelDetail"></tbody>
+			</table>
+		</div>
+		
+		<div class="warn" data-dojo-attach-point="_warnPanelCnt" style="display:none;visibility:hidden;">
+			<div class="mblSimpleDialogTitle simpleDialogWarnLine" data-dojo-attach-point="_headerWarn"></div>
+			<table cellpadding="0" cellspacing="0" border="0" class="mblSimpleDialogText">
+				<tbody data-dojo-attach-point="_warnPanelDetail"></tbody>
+			</table>
+		</div>
+		
+		<div class="info" data-dojo-attach-point="_infoPanelCnt" style="display:none;visibility:hidden;">
+			<div class="mblSimpleDialogTitle simpleDialogInfoLine" data-dojo-attach-point="_headerInfo"></div>
+			<table cellpadding="0" cellspacing="0" border="0" class="mblSimpleDialogText">
+				<tbody data-dojo-attach-point="_infoPanelDetail"></tbody>
+			</table>
+		</div>
+		
+		<div id="${id}_accept" 
+			class="mblMessageButton" 
+			style="display: none"
+			data-dojo-type="dojox.mobile.Button"  
+			data-dojo-attach-point="_acceptBtn"></div>
+	</div>
+</div>

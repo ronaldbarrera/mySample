@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html style="overflow:visible;min-width:'100%'">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link type="image/x-icon" href="${skinContextPath}/cache/${themeVersion}/images/favicon.ico" rel="icon">
+<link type="image/x-icon" href="${skinContextPath}/cache/${themeVersion}/images/favicon.ico" rel="shortcut icon">
+<link href="${skinContextPath}/cache/${themeVersion}/css/themes/${currentStyle}/${currentStyle}All.css" type="text/css" rel="stylesheet">
+<link href="${skinContextPath}/cache/${themeVersion}/css/themes/${currentStyle}/print.css" type="text/css" rel="stylesheet" />
+<link href="${skinContextPath}/cache/${themeVersion}/css/themes/${currentStyle}/custom.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript">
+
+window.onload=function(){
+	fixCheckBoxesForPrint();
+	fixTextAreaSize();
+	fixTitlePanes();
+	window.print();
+	window.close();
+}
+
+
+function fixCheckBoxesForPrint(){
+	var inputs = document.getElementsByTagName('input');
+
+	for(var i=0; i<inputs.length; i++){
+		var comp= inputs[i];
+		if(comp.getAttribute('type')=='checkbox'){
+			var id=comp.getAttribute('id');
+			if(id!=null){
+			var sel = comp.getAttribute('aria-checked')
+				if(comp.getAttribute('aria-checked')=='true'){
+					comp.setAttribute('checked','checked');
+				}
+				else{
+					comp.removeAttribute('checked');
+						}
+				comp.setAttribute('class','');
+			}
+		}
+	} 
+		
+}
+
+
+
+function fixTextAreaSize(){
+	var textArea = document.getElementsByTagName('textArea');
+	for(var i=0; i<textArea.length; i++){
+		var comp= textArea[i];
+			var id=comp.getAttribute('id');
+			if(id!=null){
+				comp.style.height = "auto";
+			// #rows = #newlines+1
+			// Note: on Moz, the following #rows appears to be 1 too many.
+			// Actually, Moz is reserving room for the scrollbar.
+			// If you increase the font size, this behavior becomes readily apparent as the last line gets cut off without the +1.
+			comp.rows = (comp.value.match(/\n/g) || []).length + 2;			
+			}
+	} 
+}
+
+function fixTitlePanes(){
+	var elems = document.getElementsByTagName('div'), i;
+	var result = [];
+    for (i in elems) {
+        if((' ' + elems[i].className + ' ').indexOf(' dijitTitlePane ')
+                > -1) {
+            elems[i].style.display="block";
+        }
+    }
+}
+</script>
+</head>
+<body class="${currentStyle}" style="font-size: 10px" style="overflow:visible;min-width:'100%'" >
+<div class="logo">
+	<img onerror="this.onerror=null; this.src='${skinContextPath}/cache/${themeVersion}/images/logog.png'" src="${skinContextPath}/cache/${themeVersion}/images/logog.svg">
+</div>
+${!inject}
+<script type="text/javascript">
+for(var i in data){
+	if(!(i in {})){
+		var ele =document.getElementById(i);
+		var valE=data[i];
+		if(valE==null){
+			valE="";
+		}
+		ele.value=valE;
+	}
+}
+</script>
+</body>
+</html>

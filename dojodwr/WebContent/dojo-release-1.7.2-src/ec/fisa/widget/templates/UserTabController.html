@@ -1,0 +1,12 @@
+<div style="visibility:hidden"><div class="userTabController">
+<table cellpadding="0" cellspacing="0" border="0"><tbody><tr><td>
+	<button data-dojo-type="dijit.form.Button" type="button"
+			id="${id}_agendaBtn"
+			showLabel="false" iconClass="fisaTabIcon agendaIcon"
+			title="${agendaTitle}" baseClass="dijitButtonFisaControl"
+			data-dojo-attach-point="_agendaBtn">
+			<script type="dojo/method" data-dojo-event="onClick" data-dojo-args="evt">
+				ec.fisa.menu.utils.menuTreeOnClick({fisaId:'agenda',name:'${agendaTitle}',itemType:'BUSINESS_TEMPLATE_CUSTOMIZED_URL',realUrl:'${agendaUrl}',notAppendable:true});
+			</script>
+	</button></td></tr></tbody></table></div>
+</div>

@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>I18n Components test -</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta>
+<link rel="stylesheet" type="text/css"
+	href="../../../../../../css/themes/fisaClassic/fisaClassic.css" />
+<link rel="stylesheet" href="../../../../dojox/widget/Dialog/Dialog.css" />
+<script type="text/javascript" src="../../../../dojo/dojo.js"
+	djConfig="isDebug:false, parseOnLoad: true"></script>
+
+<script type="text/JavaScript" >
+		dojo.require("ec.fisa.message.Panel");
+		dojo.addOnLoad(function(){
+			var panel1 =dojo.byId("panel1");
+			var msgPanel1 = new ec.fisa.message.Panel({},panel1);
+			msgPanel1.addErrorMessage('Hola',"Detalle Error 1");
+			msgPanel1.addWarnMessage('Hola',"Detalle Error 2");
+			msgPanel1.addInfoMessage('Hola',"Detalle Error 3");
+			var panel2 =dojo.byId("panel2");
+			var msgPanel2 = new ec.fisa.message.Panel({},panel2);
+			msgPanel2.addErrorMessage('Hola',"Detalle Error 4");
+			var panel3 =dojo.byId("panel3");
+			var msgPanel3 = new ec.fisa.message.Panel({},panel3);
+			msgPanel3.addWarnMessage('Hola',"Detalle Error 5");
+			var panel4 =dojo.byId("panel4");
+			var msgPanel4 = new ec.fisa.message.Panel({},panel4);
+			msgPanel4.addInfoMessage('Hola',"Detalle Error 6");
+			msgPanel4.addInfoMessage('Hola');
+		});
+</script>
+</head>
+<body class="fisaClassic">
+<div id="panel1"></div><br/>
+<div id="panel2"></div><br/>
+<div id="panel3"></div><br/>
+<div id="panel4"></div><br/>
+</body>
+</html>

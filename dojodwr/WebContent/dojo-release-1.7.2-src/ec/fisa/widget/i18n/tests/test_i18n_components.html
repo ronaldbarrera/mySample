@@ -1,0 +1,177 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>I18n Components test -</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta>
+<link rel="stylesheet" type="text/css"
+	href="/mcm-web-render/css/themes/fisaClassic/fisaClassic.css" />
+<link rel="stylesheet" type="text/css"
+	href="/mcm-web-render/javascript/dojo-release-1.7.2-src/ec/fisa/grid/fisaClassic.css" />
+	<link rel="stylesheet" type="text/css"
+	href="/mcm-web-render/javascript/dojo-release-1.7.2-src/ec/fisa/widget/i18n/css/i18n_widget.css" />
+<style type="text/css">
+body {
+	font-size: 0.9em;
+	font-family: Geneva, Arial, Helvetica, sans-serif;
+}
+
+.heading {
+	font-weight: bold;
+	padding-bottom: 0.25em;
+}
+
+#grid {
+	border: 1px solid #333;
+	width: 35em;
+	height: 30em;
+}
+</style>
+<script type="text/javascript" src="../../../../../dojo/dojo.js"
+	djConfig="isDebug:false, parseOnLoad: true"></script>
+
+<script type="text/JavaScript" >
+		dojo.require("dijit.form.Button");
+		dojo.require("ec.fisa.widget.i18n.I18nOutputText");
+		dojo.require("ec.fisa.widget.i18n.I18nTextBox");
+		dojo.require("ec.fisa.widget.i18n.I18nTextarea");
+		var supportedLanguages = ["ES","EN","IT","PT","DE", "ZH"];
+		var translationObject1 = {"ES":"UNO","EN":"ONE","IT":"IT UNO","PT":"PT UNO","DE":"DE UNO","ZH":"ZH UNO"};
+		var translationObject2 = {"ES":"DOS","EN":"TWO"};
+		var translationObject3 = {"ES":"TRES","EN":"THREE","IT":"IT TRES","PT":"PT TRES"};
+	</script>
+</head>
+<body class="fisaClassic">
+	<div class="heading">Multilanguage components</div>
+<html>
+<body>
+<table border="1">
+	<tr>
+		<td>Campo 1</td>
+		<td>
+			<div id="AA" dojotype ="ec.fisa.widget.i18n.I18nTextBox"
+			supportedLanguages='ES,EN,IT,PT,DE",ZH'
+			value='UNOÿONEÿIT UNOÿPT UNOÿDE UNOÿZH UNO'
+			defaultLanguage='ES'
+			tapdFieldLenght='131'
+			requestedAction='IN'></div>
+		</td>
+	</tr>
+	<tr>
+		<td>campo 2</td>
+		<td>
+			<div id="BB" dojotype ="ec.fisa.widget.i18n.I18nTextBox" 
+			supportedLanguages='ES,EN,IT,PT,DE,ZH'
+			value='DOSÿTWO'
+			defaultLanguage='ES'
+			tapdFieldLenght='205'
+			requestedAction='UP'></div>
+		</td>
+	</tr>
+	<tr>
+		<td>campo 3</td>
+		<td>
+			<div id="CC" dojotype ="ec.fisa.widget.i18n.I18nTextBox" 
+			supportedLanguages='ES,EN,IT,PT,DE",ZH'
+			value='TRESÿTHREEÿIT TRESÿPT TRES'
+			defaultLanguage='ES'
+			tapdFieldLenght='33'
+			requestedAction='QY'></div>
+		</td>
+	</tr>
+	
+	<tr>
+		<td>campo 4</td>
+		<td>
+	<div  title="Descripci&#243;n" 
+	  dojoType="ec.fisa.widget.i18n.I18nTextBox"
+	   supportedLanguages='ES,EN,IT,PT,DE",ZH'
+	   value='123ÿ456' defaultLanguage='ES'
+	    tapdFieldLenght='17' requestedAction='IN'>
+
+			
+			
+		</div>
+		</td>
+	</tr>
+	<tr>
+		<td>TEXTAREA 1</td>
+		<td>
+			<div id="AAA" dojotype ="ec.fisa.widget.i18n.I18nTextarea"
+			supportedLanguages='ES,EN,IT,PT,DE",ZH'
+			value='UNOÿONEÿIT UNOÿPT UNOÿDE UNOÿZH UNO'
+			defaultLanguage='ES'
+			tapdFieldLenght='400'
+			requestedAction='IN'></div>
+		</td>
+	</tr>
+	<tr>
+		<td>TEXTAREA 2</td>
+		<td>
+			<div id="BBB" dojotype ="ec.fisa.widget.i18n.I18nTextarea" 
+			supportedLanguages='ES,EN,IT,PT,DE",ZH'
+			value='DOSÿTWO'
+			defaultLanguage='ES'
+			tapdFieldLenght='600'
+			requestedAction='UP'></div>
+		</td>
+	</tr>
+	<tr>
+		<td>TEXTAREA 3</td>
+		<td>
+			<div id="CCC" dojotype ="ec.fisa.widget.i18n.I18nTextarea" 
+			supportedLanguages='ES,EN,IT,PT,DE",ZH'
+			value='TRESÿTHREEÿIT TRESÿPT TRES'
+			defaultLanguage='ES'
+			tapdFieldLenght='1000'
+			requestedAction='QY'></div>
+		</td>
+	</tr>
+	
+	<tr>
+		<td>OUTPUT TEXT 1</td>
+		<td>
+			<div id="AAA1" dojotype ="ec.fisa.widget.i18n.I18nOutputText"
+			supportedLanguages='ES,EN,IT,PT,DE",ZH'
+			value='UNOÿONEÿIT UNOÿPT UNOÿDE UNOÿZH UNO'
+			defaultLanguage='ES'
+			tapdFieldLenght='400'
+			requestedAction='IN'></div>
+		</td>
+	</tr>
+	<tr>
+		<td>OUTPUT TEXT 2</td>
+		<td>
+			<div id="BBB1" dojotype ="ec.fisa.widget.i18n.I18nOutputText" 
+			supportedLanguages='ES,EN,IT,PT,DE",ZH'
+			value='DOSÿTWO'
+			defaultLanguage='ES'
+			tapdFieldLenght='600'
+			requestedAction='UP'></div>
+		</td>
+	</tr>
+	<tr>
+		<td>OUTPUT TEXT 3</td>
+		<td>
+			<div id="CCC1" dojotype ="ec.fisa.widget.i18n.I18nOutputText" 
+			supportedLanguages='ES,EN,IT,PT,DE",ZH'
+			value='TRESÿTHREEÿIT TRESÿPT TRES'
+			defaultLanguage='ES'
+			tapdFieldLenght='1000'
+			requestedAction='QY'></div>
+		</td>
+	</tr>
+	
+</table>
+<br>
+
+<script type="text/JavaScript">
+		//dojo.require("ec.fisa.widget.i18n.I18nTextBox");
+		//var contenedor = dojo.byId('contenedor123');
+		//dojo.ready(function(){
+		//var widget = new ec.fisa.widget.i18n.I18nTextBox({ES:{isoCode:"ES", translation:"Español"},EN:{isoCode:"EN", translation:"English"}},"ES", 2, 20).placeAt(contenedor);
+//});
+	</script>
+
+</body>
+</html>

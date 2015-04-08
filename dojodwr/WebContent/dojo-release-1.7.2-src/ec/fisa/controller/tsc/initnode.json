@@ -1,0 +1,7 @@
+{
+	identifier: 'id',
+	label: 'name',
+	items: [
+		{ id: '0', name:'Ruta', numberOfItems:1000}
+	]
+}

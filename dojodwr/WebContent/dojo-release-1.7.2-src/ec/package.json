@@ -1,0 +1,23 @@
+{
+	"name": "fisa",
+	"version":"1.7.0dev",
+	"directories": {
+		"lib": "."
+	},
+	"main": "main",
+	"description": "Extensiones para fisa",
+	"licenses": [
+		 {
+				 "type": "AFLv2.1",
+				 "url": "http://trac.dojotoolkit.org/browser/dojox/trunk/LICENSE#L43"
+		 },
+		 {
+				 "type": "BSD",
+				 "url": "http://trac.dojotoolkit.org/browser/dojox/trunk/LICENSE#L13"
+		 }
+	],
+	"bugs": "http://bugs.dojotoolkit.org/",
+	"keywords": ["JavaScript", "Dojo", "Toolkit", "DojoX"],
+	"homepage": "http://dojotoolkit.org/",
+	"dojoBuild": "ec.profile.js"
+}

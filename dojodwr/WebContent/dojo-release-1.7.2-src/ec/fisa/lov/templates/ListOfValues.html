@@ -1,0 +1,23 @@
+<div>
+<table border="0" cellpadding="0" cellspacing="0" class="fisaLov">
+	<tbody>
+		<tr>
+			<td>
+			<div id="${id}_textBox" dojoType="dijit.form.TextBox" tabIndex="${_tabIndex}"
+				data-dojo-attach-point="_textBox" ${_initialValue} ${_readOnlyExpr}
+				baseClass="${textboxBaseClass}" data-dojo-props='${_dojoProps}' ${_maxLengthExp}></div>
+			</td>
+			<td class="buttonTd">
+			<button id="${id}_button" dojoType="dijit.form.Button" ${_readOnlyExprButton}
+				class="${selectBaseClass}" iconClass="${selectIconClass}" tabIndex="${_tabIndex}"
+				showLabel="false" data-dojo-attach-point="_button"></button>
+			</td>
+			<td>
+			<div id="${id}_complement" dojoType="ec.fisa.widget.OutputText"
+				data-dojo-attach-point="_complementNode"
+				baseClass="${complementBaseClass}"></div>
+			</td>
+		</tr>
+	</tbody>
+</table>
+</div>

@@ -1,0 +1,13 @@
+
+
+dojo/dojo
+https://github.com/dojo/dojo
+The Dojo Toolkit core library. Please submit bugs to https://bugs.dojotoolkit.org/
+
+https://github.com/dojo/dojox
+The Dojo Toolkit extras library. Please submit bugs to https://bugs.dojotoolkit.org/
+
+util
+The Dojo Toolkit build utilities. Please submit bugs to https://bugs.dojotoolkit.org/
+Updated on 11 Feb
+

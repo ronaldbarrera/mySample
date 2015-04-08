@@ -1,0 +1,1 @@
+sh ../dojo-release-1.7.4-src/util/buildscripts/build.sh -r --profile render.profile.js

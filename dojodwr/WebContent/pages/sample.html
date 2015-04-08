@@ -1,0 +1,117 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v = "urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+<title>Cupos and L&iacute;mites</title>
+ <script type='text/javascript' src='../dwr/engine.js'> </script>
+ <script type='text/javascript' src='../dwr/util.js'> </script>
+ <script type='text/javascript' src='../dwr/interface/ViewServiceDVQuotaP.js'> </script>
+<script type="text/javascript" src="sample.js"></script>
+<style type="text/css">
+.itemCupo{ border-bottom:1px solid #ccc; padding-bottom: 10px; }
+</style>
+</head>
+<body  onload="initTable();">
+ <p style="display: none;">
+      Name:
+      <input type="text" id="demoName" value="Gizlo"/>
+      <input type="button" id="demoSend" value="Saludar" onclick="sayHello()"/>
+      <br/>
+      Respuesta: <span id="demoReply" style="background:#eeffdd; padding-left:4px; padding-right:4px;">&nbsp;</span>
+    </p>
+
+<h2>PAQUETE </h2>
+<center>
+<table border="0" align="center" cellspacing="5" cellpadding="5">
+	<thead>
+	<tr style="background:#ccc;">
+	<td>ID</td>
+	<td>NOMBRE</td>
+	<td>APLICA</td>
+	</tr>
+	</thead>
+	<tbody id="dataBody">
+		 <tr id="pattern"  style="display:none;" >
+          <td height="30">
+            <span id="packageId" >Name</span>
+          </td>
+          <td>
+            <span id="packageName" >Name</span>
+          </td>
+          <td>
+            <span id="packageAplica" >Name</span>
+          </td>
+         
+        </tr>
+	</tbody>
+</table>
+</center>
+
+
+
+<div id="block" style="display:none;" >
+	<h4 style="width: 100%;background: #555;color:white">
+	<span id="blockTitle" title="code" >Name</span>
+	</h4>
+	<table border="0" cellpadding="2" cellspacing="2" id="detailTable">
+		<thead>
+			<tr style="background: #444;color:white;border-bottom:1px solid #ccc;">
+				<td height="40">Cupo</td>
+				<td style="background:orange;">Canal</td>
+				<td>MonLimite</td>
+				<td>Cup.Max</td>
+				<td>Cup.Defect</td>
+				<td>n.Trans.Maximo</td>
+				<td>n.Trans.Defecto</td>
+				<td>F.Inicio</td>
+				<td>Vigencia</td>
+				<td>Opciones</td>
+			</tr>
+		</thead>
+		<tbody id="detailBody"  style="display:none;">
+			<tr>
+				<td class="itemCupo"><span id="detailBody_cupo">Name</span></td>
+				<td class="itemCupo"><span id="detailBody_canal">Name</span></td>
+				<td class="itemCupo"><span id="detailBody_monlimite">Name</span></td>
+				<td class="itemCupo"><span id="detailBody_cupmax">Name</span></td>
+				<td class="itemCupo"><span id="detailBody_cupdef">Name</span></td>
+				<td class="itemCupo"><span id="detailBody_trmax">Name</span></td>
+				<td class="itemCupo"><span id="detailBody_trdef">Name</span></td>
+				<td class="itemCupo"><span id="detailBody_fini">Name</span></td>
+				<td class="itemCupo"><span id="detailBody_vigencia">Name</span></td>
+				<td class="itemCupo"> 
+					<input type="button" value="Editar" onclick="writePerson()"/>
+          			<input type="button" value="Eliminar" onclick="clearPerson()"/>
+  			    </td>
+			</tr>
+		</tbody>
+		
+		<tfoot>
+			<tr style="background: #ddd;color:#222;">
+				<td  height="40">
+				<select><option>Limite Bimensual</option></select> 
+				</td>
+				
+				<td style="background:orange;">
+				<select><option>ATM</option></select> 
+				</td>
+				<td>
+				<select><option>EURO</option></select> 
+				</td>
+				<td><input type="text"></input> </td>
+				<td><input type="text"></input></td>
+				<td><input type="text"></input></td>
+				<td><input type="text"></input></td>
+				<td>F.Inicio</td>
+				<td>Vigencia</td>
+				<td></td>
+			</tr>
+		</tfoot>
+		
+	</table>
+</div>
+
+
+
+</body>
+</html>

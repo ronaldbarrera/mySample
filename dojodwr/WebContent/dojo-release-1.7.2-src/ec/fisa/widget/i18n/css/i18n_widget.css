@@ -1,0 +1,61 @@
+.addLanguage, .removeLanguage, .colapseLanguages, .expandLanguages{
+	padding:0;
+    float: left;
+    background-color:transparent;
+    border:none;
+    width:16px;
+    height:16px;
+    margin-right:2px;
+    background-repeat:no-repeat;
+    -moz-box-shadow: none;
+    -khtml-box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-border-radius: none;
+    -webkit-border-radius:  none;
+    behavior: url(ie-css3.htc);
+}
+.addLanguage{
+	background-image:url(../images/i18nadd.png);
+}
+.removeLanguage{
+	background-image:url(../images/i18ndelete.png);
+}
+.colapseLanguages{
+	background-image:url(../images/i18ncollapse.png);
+}
+.expandLanguages{
+	background-image:url(../images/i18nexpand.png);
+}
+
+
+
+.i18nTextAreaTranslationTagClass,.i18nTextBoxTranslationTagClass{
+    background-color: #D8D8D8;
+	color: #808080;
+	font-size: 11px;
+	font-weight: bold;
+	position: absolute;
+	text-align: center;
+	width: 20px;
+	left: 14%;
+}
+.i18nTextAreaTranslationTagClass{
+	top: 44%;
+}
+.i18nTextBoxTranslationTagClass{
+	top: 15%;
+}
+
+.i18nTextAreaTranslationTagContainerClass, .i18nTextBoxTranslationTagContainerClass {
+	  float: left;
+	  position: relative;
+	  width: 30px;
+}
+
+.i18nTextAreaTranslationTagContainerClass{
+	height: 99px;
+}
+
+.i18nTextBoxTranslationTagContainerClass{
+	height: 24px;
+}
