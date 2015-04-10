@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>grid</title>
+<script type="text/javascript" src="defValorCupoPaquete.js"></script>
+
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/dojo/1.10.3/dijit/themes/claro/claro.css" />
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojox/grid/resources/claroGrid.css" />
+
+ <script src="http://ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojo/dojo.js"
+            data-dojo-config="isDebug: true,async: false, parseOnLoad: true">
+ console.log(dojo);
+ </script>
+ 
+ <script type="text/javascript">
+ 		dojo.require("dojo.dom"); 
+ 		dojo.require("dojo.data.ItemFileWriteStore"); 
+        dojo.require("dojox.grid.DataGrid");
+
+        dojo.ready(function(){
+            var data = {
+              identifier: 'id',
+              items: []
+            };
+            var data_list = [
+              { col1: "normal",    col2: false, col3: 'uno', col4: 29.91},
+              { col1: "important", col2: false, col3: 'dos', 		 col4: 9.33},
+              { col1: "important", col2: false, col3: 'tres', 				 col4: 19.34}
+            ];
+            var rows = 13;
+            for(var i=0, l=data_list.length; i<rows; i++){
+              data.items.push(dojo.mixin({ id: i+1 }, data_list[i%l]));
+            }
+            var store = new dojo.data.ItemFileWriteStore({data: data});
+
+            /*set up layout*/
+            var layout = [[
+              {'name': 'CUPO', 'field': 'id'},
+              {'name': 'CANAL', 'field': 'col2'},
+              {'name': 'MONEDA', 'field': 'col3', 'width': '230px'},
+              {'name': 'MAXIMO', 'field': 'col4', 'width': '230px'}
+            ]];
+
+            /*create a new grid:*/
+//            var grid = new dojox.grid.EnhancedGrid({
+//              document.createElement('div'));
+
+            var grid = new dojox.grid.DataGrid({
+                id: 'grid',
+                store: store,
+                structure: layout,
+                rowSelector: '20px'});
+
+            /*append the new grid to the div*/
+ //           grid.placeAt("gridDiv");
+            dojo.byId("gridDiv").appendChild(grid.domNode);
+
+            /*Call startup() to render the grid*/
+            grid.startup();
+        });
+
+    </script> 
+</head>
+<body class="claro">
+<div id="gridDiv" style="height: 20em;"></div>
+</body>
+</html>

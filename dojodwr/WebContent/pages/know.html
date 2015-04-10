@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+var nombre = function(data){
+	return "Ronald";
+};
+
+var anon = function(data) {
+	  alert('1 I am anonymous ' + data);
+	};
+var anon2 = function(data,d2,d3) {
+	  alert('2 I am anonymous ' + data +' '+d2+' '+d3);
+	};
+//	anon('Ron');
+//	anon2('Ron', 'thay', 'fred', 'Ingrid');
+
+</script>
+</head>
+<body>
+
+<a href="" onclick="anon">
+ejecutar</a> <br /><br />
+
+
+<a href="" onclick="anon(nombre)">
+ejecutar</a> <br /><br />
+
+
+<a href="" onclick="anon('dfsd');">
+ejecutar</a> <br /><br />
+
+
+</body>
+</html>
