@@ -1,4 +1,4 @@
-package com.fisa.render.limit.core;
+package com.fisa.render.quota.view.demo;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -6,13 +6,20 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
 
+import com.fisa.render.limit.model.CustomLevel;
+import com.fisa.render.limit.model.LimitView;
+
 public class Samples {
 
-	public static LimitView getData(){		
-		LimitView lv =new LimitView();
-		lv.setCodePackage(""+Samples.randBetween(1, 185));
-		lv.setNamePackage("Paquete de Limites y Transacciones");
-		lv.setAplicaA("Empresas");
+	public static com.fisa.render.limit.model.Package getPack(){
+		com.fisa.render.limit.model.Package pkg = new com.fisa.render.limit.model.Package();
+		pkg.setCodePackage(""+Samples.randBetween(1, 185));
+		pkg.setNamePackage("Paquete de Limites y Transacciones");
+		pkg.setAplicaA("Empresas");
+		return pkg;
+	}
+	
+	public static List<CustomLevel> getCustomLevels(){
 		List<CustomLevel> lc = new ArrayList<CustomLevel>();
 		CustomLevel cl = new CustomLevel();
 		String txt1 = Samples.randText(randBetween(20, 333));
@@ -24,13 +31,12 @@ public class Samples {
 		cl2.setCode(txt2);
 		cl2.setName(txt2);
 		lc.add(cl2);
-		CustomLevel cl3 = new CustomLevel();
-		String txt3 = Samples.randText(randBetween(20, 333));
-		cl3.setCode(txt3);
-		cl3.setName(txt3);
-		lc.add(cl3);
-		lv.setCustonLevel(lc);
-		return lv;
+//		CustomLevel cl3 = new CustomLevel();
+//		String txt3 = Samples.randText(randBetween(20, 333));
+//		cl3.setCode(txt3);
+//		cl3.setName(txt3);
+//		lc.add(cl3);
+		return lc;
 	}
 	
 	public static List<LimitView> getData2(){
@@ -38,51 +44,36 @@ public class Samples {
 		
 		LimitView lv =new LimitView();
 		lv.setCodePackage(""+Samples.randBetween(1, 185));
-		lv.setNamePackage("Paquete de Limites y Transacciones");
-		lv.setAplicaA("Empresas");
-		List<CustomLevel> lc = new ArrayList<CustomLevel>();
-		CustomLevel cl = new CustomLevel();
-		String txt1 = Samples.randText(randBetween(20, 333));
-		cl.setCode(txt1);
-		cl.setName(txt1);
-		lc.add(cl);
-		CustomLevel cl2 = new CustomLevel();
-		String txt2 = Samples.randText(randBetween(20, 333));
-		cl2.setCode(txt2);
-		cl2.setName(txt2);
-		lc.add(cl2);
-		CustomLevel cl3 = new CustomLevel();
-		String txt3 = Samples.randText(randBetween(20, 333));
-		cl3.setCode(txt3);
-		cl3.setName(txt3);
-		lc.add(cl3);
-		lv.setCustonLevel(lc);
-		lv.setCodeLimit("01");
+//		lv.setNamePackage("Paquete de Limites y Transacciones");
+//		lv.setAplicaA("Empresas");
+		
+//		lv.setCustonLevel(lc);
+		lv.setCodeLimit(""+randBetween(10, 25));
 		lv.setNameLimit("Limite Diaro");
-		lv.setCupoMaximo(new BigDecimal("1000"));
-		lv.setCupoDefecto(new BigDecimal("5255"));
+		lv.setCupoMaximo(new BigDecimal(""+randBetween(1000, 2500)));
+		lv.setCupoDefecto(new BigDecimal(""+randBetween(800, 7500)));
 		lista.add(lv);
 		
 		LimitView lv2 =new LimitView();
 		lv2.setCodePackage(""+Samples.randBetween(1, 185));
-		lv2.setNamePackage("Paquete de Limites y Transacciones 2");
-		lv2.setAplicaA("Empresas");
-		
-		lv2.setCodeLimit("01");
+//		lv2.setNamePackage("Paquete de Limites y Transacciones 2");
+//		lv2.setAplicaA("Empresas");
+//		
+		lv2.setCodeLimit(""+randBetween(10, 25));
 		lv2.setNameLimit("Limite Semanal");
-		lv2.setCupoMaximo(new BigDecimal("1000"));
-		lv2.setCupoDefecto(new BigDecimal("5255"));
+		lv2.setCupoMaximo(new BigDecimal(""+randBetween(800, 7500)));
+		lv2.setCupoDefecto(new BigDecimal(""+randBetween(800, 7500)));
 		lista.add(lv2);
 		
 		LimitView lv3 =new LimitView();
 		lv3.setCodePackage(""+Samples.randBetween(1, 185));
-		lv3.setNamePackage("Paquete de Limites y Transacciones 3");
-		lv3.setAplicaA("Empresas");
+//		lv3.setNamePackage("Paquete de Limites y Transacciones 3");
+//		lv3.setAplicaA("Empresas");
 		
-		lv3.setCodeLimit("01");
+		lv3.setCodeLimit(""+randBetween(10, 25));
 		lv3.setNameLimit("Limite Mensual");
 		lv3.setCupoMaximo(new BigDecimal("1000"));
-		lv3.setCupoDefecto(new BigDecimal("5255"));
+		lv3.setCupoDefecto(new BigDecimal(""+randBetween(800, 7500)));
 		lista.add(lv3);
 		return lista;
 		
