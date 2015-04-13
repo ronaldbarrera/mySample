@@ -67,6 +67,8 @@ for(CustomLevel item : listaCL){
 	</h4>
   <div id="gridDiv<%= item.getCode() %>" class="jsDataGrid"  style="height: 20em;"></div>
 <br />
+
+<a href="#" id="linkNuevo<%= item.getCode() %>"  class="linkNuevoJs"   > + Nuevo</a>
 <br />
 <% } %>  
  

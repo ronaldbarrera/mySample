@@ -29,6 +29,7 @@ function getData2Update(dataDWR) {
 			
 		console.log(  '------------- numero Tablas'  );
 		var nodes  =query(".jsDataGrid");
+		var nodesLinksNuevo  =query(".linkNuevoJs");
 		console.log(nodes);
 		
 		/* set up layout */
@@ -41,7 +42,11 @@ function getData2Update(dataDWR) {
 		                  { 'name' : 'Opciones' , 'field' : 'codeLimit', formatter : formatter}
 		                  ] ];
 	
-		
+		for(var x = 0; x < nodesLinksNuevo.length; x++){
+			nodesLinksNuevo[i].click(function() {
+				alert('hi');
+			});
+		}
 		
 		for(var x = 0; x < nodes.length; x++){
 			
@@ -67,14 +72,17 @@ function getData2Update(dataDWR) {
 			console.log('\n\n');
 			
 			console.log(  '------------- limits'  );
-			console.log(json2txt(dataDWR, ' limits> '));
+			console.log(json2txt(limits, ' limits> '));
 			console.log('\n\n');
 			
 			var store = new dojo.data.ItemFileWriteStore({ data : data });
 		
 			console.log(  '------------- store'  );
-			console.log(json2txt(dataDWR, ' store> '));
+			console.log(json2txt(store, ' store> '));
 			console.log('\n\n\n\n');
+			
+//			store.newItem({ identifier : 'id',  items : [] });
+			
 			
 			var layout = layoutA;
 			console.log('-->> Definicieno grid');
