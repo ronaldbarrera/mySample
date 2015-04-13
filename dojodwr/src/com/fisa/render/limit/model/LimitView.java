@@ -11,6 +11,9 @@ public class LimitView {
 	private BigDecimal cupoMaximo;
 	private BigDecimal cupoDefecto;
 	
+	private boolean  deleted=false;
+	private boolean  updated=false;
+	
 	public String getCodePackage() {
 		return codePackage;
 	}
@@ -46,6 +49,18 @@ public class LimitView {
 	}
 	public void setCupoDefecto(BigDecimal cupoDefecto) {
 		this.cupoDefecto = cupoDefecto;
+	}
+	public boolean isDeleted() {
+		return deleted;
+	}
+	public void setDeleted(boolean deleted) {
+		this.deleted = deleted;
+	}
+	public boolean isUpdated() {
+		return updated;
+	}
+	public void setUpdated(boolean updated) {
+		this.updated = updated;
 	}
 	
 

@@ -24,7 +24,7 @@
 <meta charset="utf-8">
   <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/dojo/1.10.3/dijit/themes/claro/claro.css" />
   <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojox/grid/resources/claroGrid.css" />
-  
+
 <script type='text/javascript' src='<c:url value='/dwr/engine.js'/>'> </script>
 <script type='text/javascript' src="<c:url value='/dwr/util.js'/>"> </script>
 <script type="text/javascript" src="<c:url value='/dwr/interface/LimitValuePackageDWR.js'/>"></script>
@@ -55,22 +55,21 @@
 			Aplica a: <span id="aplicaA"><b><%= pack.getAplicaA() %></b></span>
 			</td>
 		</tr>
-	</tbody>
-</table>
+	</tbody> 
+</table> 
 <br />
-
+ 
 <% 
 for(CustomLevel item : listaCL){
 %>
 <h4 style="width: 20%;background: #555;color:white">
 	<span id="blockTitle" title="code" ><%= item.getName() %></span>
 	</h4>
-  <div id="gridDiv" style="height: 20em;"></div>
+  <div id="gridDiv<%= item.getCode() %>" class="jsDataGrid"  style="height: 20em;"></div>
 <br />
 <br />
-<% } %>
-
-
-
+<% } %>  
+ 
+  
    </body>
    </html>

@@ -23,12 +23,13 @@ public class Samples {
 		List<CustomLevel> lc = new ArrayList<CustomLevel>();
 		CustomLevel cl = new CustomLevel();
 		String txt1 = Samples.randText(randBetween(20, 333));
-		cl.setCode(txt1);
+		cl.setCode("45");
 		cl.setName(txt1);
 		lc.add(cl);
+		
 		CustomLevel cl2 = new CustomLevel();
 		String txt2 = Samples.randText(randBetween(20, 333));
-		cl2.setCode(txt2);
+		cl2.setCode("777");
 		cl2.setName(txt2);
 		lc.add(cl2);
 //		CustomLevel cl3 = new CustomLevel();
@@ -43,10 +44,9 @@ public class Samples {
 		List<LimitView> lista = new ArrayList<LimitView>();
 		
 		LimitView lv =new LimitView();
-		lv.setCodePackage(""+Samples.randBetween(1, 185));
+		lv.setCodePackage("45");
 //		lv.setNamePackage("Paquete de Limites y Transacciones");
 //		lv.setAplicaA("Empresas");
-		
 //		lv.setCustonLevel(lc);
 		lv.setCodeLimit(""+randBetween(10, 25));
 		lv.setNameLimit("Limite Diaro");
@@ -55,10 +55,9 @@ public class Samples {
 		lista.add(lv);
 		
 		LimitView lv2 =new LimitView();
-		lv2.setCodePackage(""+Samples.randBetween(1, 185));
+		lv2.setCodePackage("777");
 //		lv2.setNamePackage("Paquete de Limites y Transacciones 2");
 //		lv2.setAplicaA("Empresas");
-//		
 		lv2.setCodeLimit(""+randBetween(10, 25));
 		lv2.setNameLimit("Limite Semanal");
 		lv2.setCupoMaximo(new BigDecimal(""+randBetween(800, 7500)));
@@ -66,10 +65,9 @@ public class Samples {
 		lista.add(lv2);
 		
 		LimitView lv3 =new LimitView();
-		lv3.setCodePackage(""+Samples.randBetween(1, 185));
+		lv3.setCodePackage("777");
 //		lv3.setNamePackage("Paquete de Limites y Transacciones 3");
 //		lv3.setAplicaA("Empresas");
-		
 		lv3.setCodeLimit(""+randBetween(10, 25));
 		lv3.setNameLimit("Limite Mensual");
 		lv3.setCupoMaximo(new BigDecimal("1000"));
