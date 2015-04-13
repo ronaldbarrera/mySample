@@ -35,13 +35,14 @@
             var store = new dojo.data.ItemFileWriteStore({data: data});
 
             /*set up layout*/
-            var layout = [[
+            var layout = [
+              [
               {'name': 'CUPO', 'field': 'id'},
               {'name': 'CANAL', 'field': 'col2'},
-              {'name': 'MONEDA', 'field': 'col3', 'width': '230px'},
-              {'name': 'MAXIMO', 'field': 'col4', 'width': '230px'}
+              {'name': 'MONEDA', 'field': 'col3', 'width': '30px'},
+              {'name': 'MAXIMO', 'field': 'col4', 'width': '30px'}
             ]];
-
+	alert(layout[0][0]);
             /*create a new grid:*/
 //            var grid = new dojox.grid.EnhancedGrid({
 //              document.createElement('div'));
