@@ -1,4 +1,4 @@
-package com.fisa.render.limit.core;
+package com.fisa.render.limit.model;
 
 public class CustomLevel {
 	private String name;

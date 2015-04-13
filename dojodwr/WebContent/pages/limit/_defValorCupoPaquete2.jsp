@@ -1,42 +1,36 @@
+0<%@page import="com.fisa.render.limit.model.LimitView"%>
+<%@page import="com.fisa.render.quota.view.demo.Samples"%>
+<%@page import="com.fisa.render.limit.model.CustomLevel"%>
+
+<%  String modo    =  request.getParameter("pm") ;
+	String codigop = request.getParameter("pp") ;
+	LimitView limitView = Samples.getData();
+%>
+ <%@page contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+
+<%@taglib  prefix="c"    uri="http://java.sun.com/jsp/jstl/core"%>
+<% //  prefix="fisa" uri="http://www.fisa.com/jsp/jstl/render"%>
+<%@taglib  prefix="fn"   uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@taglib prefix="dwr" uri="http://www.directwebremoting.org/dwr/"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>grid</title>
-<script type="text/javascript" src="defValorCupoPaquete.js"></script>
-
+<meta charset="utf-8">
   <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/dojo/1.10.3/dijit/themes/claro/claro.css" />
   <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojox/grid/resources/claroGrid.css" />
+  
+<script type='text/javascript' src='<c:url value='/dwr/engine.js'/>'> </script>
+<script type='text/javascript' src="<c:url value='/dwr/util.js'/>"> </script>
+<script type="text/javascript" src="<c:url value='/dwr/interface/LimitProcessDWR.js'/>"></script>
+<script type="text/javascript" src="defValorCupoPaquete.js"></script>
 
  <script src="http://ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojo/dojo.js"
             data-dojo-config="isDebug: true,async: false, parseOnLoad: true">
  console.log(dojo);
  </script>
- 
- <script type="text/javascript">
+             
+  <script type="text/javascript">
 
-	function json2txt(obj, path)
-	{
-	    var txt = '';
-	    for (var key in obj)
-	    {
-	        if (obj.hasOwnProperty(key))
-	        {
-	            if ('object' == typeof(obj[key]))
-	            {
-	                txt += json2txt(obj[key], path + (path ? '.' : '') + key);
-	            } 
-	            else
-	            {
-	                txt += path + '.' + key + '\t' + obj[key] + '\n';
-	            }
-	        }
-	    }
-	    return txt;
-	}
-
- 
- 
  		dojo.require("dojo.dom"); 
  		dojo.require("dojo.data.ItemFileWriteStore"); 
         dojo.require("dojox.grid.DataGrid");
@@ -125,9 +119,101 @@
             grid.startup();
         });
 
-    </script> 
+    </script>           
+            
 </head>
-<body class="claro">
-<div id="gridDiv" style="height: 20em;"></div>
-</body>
-</html>
+<body style="font-family: verdana;"  class="claro" onload="getData2();">
+
+    
+    
+    <div id="gridDiv" style="height: 20em;"></div>
+    
+    
+    
+    
+
+<h3 id="titulo"> </h3>
+
+<h3>Definición Valor Cupos por Paquete </h3>
+<table align="center">
+	<tbody>
+		<tr>
+			<td style="background:#ccc;" width="200" align="center">Paquete de Cupos</td>
+			<td width="600"></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>
+			Paquete: <span id="paqueteID" ><b><%= limitView.getCodePackage() %></b></span> 
+					 <span id="paqueteName"><b><%= limitView.getNamePackage() %></b></span>
+			<br />
+			Aplica a: <span id="aplicaA"><b><%= limitView.getAplicaA() %></b></span>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<br />
+
+<% 
+for(CustomLevel item : limitView.getCustonLevel()){
+%>
+<h4 style="width: 20%;background: #555;color:white">
+	<span id="blockTitle" title="code" ><%= item.getName() %></span>
+	</h4>
+
+
+
+<br />
+<br />
+
+<% } %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br /><br />
+<br /><br />
+<br /><br />
+
+
+
+
+	Hello <b><%= request.getParameter("pa") %></b>!
+
+
+  
+    
+    
+    
+
+
+
+
+
+
+
+
+ 	<p> Name:
+      <input type="text" id="demoName" value="Gizlo"/>
+      <input type="button" id="demoSend" value="Saludar" onclick="getData2()"/>
+      <br/><br/>
+      Respuesta: <span id="demoReply" style="background:#eeffdd; padding-left:4px; padding-right:4px;">&nbsp;</span>
+    </p>
+    
+    <input type="button" id="mover" value="mover" onclick="move()"/>
+    
+   </body>
+   </html>

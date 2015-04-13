@@ -5,24 +5,31 @@
 
   <allow>
 
-	<create creator="new"  javascript="LimitProcessDWR">
+	<create creator="new"  javascript="LimitValuePackageDWR">
       <param name="class" 
-      	value="com.fisa.render.limit.core.LimitProcessDWR"/>
+      	value="com.fisa.render.limit.dwr.LimitValuePackageDWR"/>
       		<include method="hiFisa" />
+      		<include method="getViewData" />
     </create>
+    <create creator="new"  javascript="LimitValuePackageUserDWR">
+      <param name="class" 
+      	value="com.fisa.render.limit.dwr.LimitValuePackageUserDWR"/>
+      		<include method="hiFisa" />
+      		<include method="getViewData" />
+    </create>
+    <create creator="new"  javascript="LimitValuePackageClientDWR">
+      <param name="class" 
+      	value="com.fisa.render.limit.dwr.LimitValuePackageClientDWR"/>
+      		<include method="hiFisa" />
+      		<include method="getViewData" />
+    </create>
+	<convert match="com.fisa.render.limit.model.LimitView" 		converter="bean"/>
+    <convert match="com.fisa.render.limit.model.CustomLevel"    converter="bean"/>
+    <convert match="com.fisa.render.limit.model.PersonalizationLevel"   converter="bean"/>
+    <convert match="com.fisa.render.limit.model.Package"   		converter="bean"/>
 
 
-
-    <create creator="new">
-      <param name="class" value="com.fisa.render.quota.view.services.ViewServiceDVQuotaP"/>
-    </create>
-	<create creator="new">
-      <param name="class" value="com.fisa.render.quota.view.demo.ServiceDemo"/>
-    </create>
-    <convert match="com.fisa.render.quota.view.model.ViewDataQPV" converter="bean"/>
-    <convert match="com.fisa.render.quota.view.model.QuotaData"   converter="bean"/>
-    <convert match="com.fisa.render.quota.view.model.GroupT"   converter="bean"/>
-    
+ 
     
   </allow>
 
