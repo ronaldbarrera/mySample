@@ -20,7 +20,7 @@
 <%@taglib prefix="dwr" uri="http://www.directwebremoting.org/dwr/"%>
 <!DOCTYPE html>
 <html>
-<head>
+<head> 
 <meta charset="utf-8">
   <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/dojo/1.10.3/dijit/themes/claro/claro.css" />
   <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojox/grid/resources/claroGrid.css" />
@@ -46,7 +46,7 @@
 			<td style="background:#ccc;" width="200" align="center">Paquete de Cupos</td>
 			<td width="600"></td>
 		</tr>
-		<tr>
+		<tr> 
 			<td></td>
 			<td>
 			Paquete: <span id="paqueteID" ><b><%= pack.getCodePackage() %></b></span> 
@@ -58,7 +58,7 @@
 	</tbody> 
 </table> 
 <br />
- 
+         
 <% 
 for(CustomLevel item : listaCL){
 %>
@@ -68,10 +68,11 @@ for(CustomLevel item : listaCL){
   <div id="gridDiv<%= item.getCode() %>" class="jsDataGrid"  style="height: 20em;"></div>
 <br />
 
-<a href="#" id="linkNuevo<%= item.getCode() %>"  class="linkNuevoJs"   > + Nuevo</a>
+<a href="#"  class="linkNuevoJs"   
+		data-dojo-id='linkNuevo<%= item.getCode() %>' > + Nuevo</a>
 <br />
-<% } %>  
- 
-  
+<% } %>   
+    
+    
    </body>
    </html>

@@ -7,33 +7,48 @@ dojo.ready(function() {
 });
 
 function getData2Update(dataDWR) {
-
 	require(["dojo/query",'dijit/form/Button'], function(query, Button){
 		
-			function formatter(){
-				alert('dfgdfd');
+			function formatter(col, rowIndex){
+//				alert('dfgdfd');
 	            var w = new Button({
-	                label: "Click me!",
+	                label: "delete",
 	                onClick: function() {
-	                    alert("Thanks for all the fish.  ");
+		  			      if (confirm("Seguro Desea Eliminar? rowIndex: "+rowIndex)){
+		  			    	 //var rowdata = this.grid.getItem(rowIndex);
+		  			    	//console.log("this.grid> "+this.grid);
+		  			    	//  alert(rowdata['id']);
+		  			    	console.log(json2txt(col, ' col> '));
+		  			    	console.log(json2txt(grid.store, ' gridStore> '));
+		  			    	for (var i = 0, itemSeleccionado; itemSeleccionado = grid.store[ i++];) {
+		  			    		console.log(json2txt(itemSeleccionado, ' stItem> '));
+		  			    			
+		  			    	}
+		  			    	  console.log( grid.store);
+		  			    	 console.log(  grid.store[rowIndex] );
+		  			    	store.deleteItem(  grid.store[rowIndex] );
+		  			    	store.save({onComplete: saveDone, onError: saveFailed});
+		  			    	
+		  			    	  var item = grid.selection.getSelected();
+		  			    	  var work_id = grid.store.getValue(item[0], "work_id");
+		                        alert(work_id);
+		  			      }
 	                }
 	            });
-	            w._destroyOnRemove=true;
 	            return w;
 	        }
+	//---------------------------------------------------------------------		
 			function formatDate(datum){
 	            /* Format the value in store, so as to be displayed.*/
 	            var d = stamp.fromISOString(datum);
 	            return locale.format(d, {selector: 'date', formatLength: 'long'});
 	        }
-			
+	//---------------------------------------------------------------------		
 		console.log(  '------------- numero Tablas'  );
 		var nodes  =query(".jsDataGrid");
-		var nodesLinksNuevo  =query(".linkNuevoJs");
-		console.log(nodes);
 		
 		/* set up layout */
-		var layoutA = [ [ { 'name' : 'CUPO', 'field' : 'nameLimit' }, 
+		var layout = [ [ { 'name' : 'CUPO', 'field' : 'nameLimit' }, 
 		                  { 'name' : 'Cupo Maximo', 'field' : 'cupoMaximo' }, 
 		                  { 'name' : 'Cupo x Defecto', 'field' : 'cupoDefecto' },
 		                  { 'name' : 'Cod Package', 'field' : 'codePackage' },
@@ -41,50 +56,33 @@ function getData2Update(dataDWR) {
 		                  { 'name' : 'Codigo Limite', 'field' : 'codeLimit' },
 		                  { 'name' : 'Opciones' , 'field' : 'codeLimit', formatter : formatter}
 		                  ] ];
-	
-		for(var x = 0; x < nodesLinksNuevo.length; x++){
-			nodesLinksNuevo[i].click(function() {
-				alert('hi');
-			});
-		}
 		
 		for(var x = 0; x < nodes.length; x++){
 			
 			var data = { 	identifier : 'id',  items : [] 	};
 			
-			var limits = dataDWR;
-			var rows = 4;
-			for (var i = 0, l = limits.length; i < rows; i++) {
-				var itemSeleccionado = limits[i % l];
-//				console.log(i + ' -x-  ' + l);
-//				console.log(json2txt(limits[i % l], ' dojoMixin> '));
-				console.log("compare"+ itemSeleccionado.codePackage);
+			for (var i = 0, itemSeleccionado; itemSeleccionado = dataDWR[ i++];) {
+//				console.log(json2txt(itemSeleccionado, ' dojoMixin> '));
 				if( nodes[x].id == 'gridDiv'+itemSeleccionado.codePackage  ){
-//					alert('exito')
-//					itemSeleccionado['Opciones'] = "<a href='#'>hi</a>";
 					data.items.push(dojo.mixin({ id : i + 1 }, itemSeleccionado ));
 				}
-				
 			}
-			
-			console.log(  '------------- dataDWR'  );
-			console.log(json2txt(dataDWR, ' DWR> '));
-			console.log('\n\n');
-			
-			console.log(  '------------- limits'  );
-			console.log(json2txt(limits, ' limits> '));
-			console.log('\n\n');
-			
+						
 			var store = new dojo.data.ItemFileWriteStore({ data : data });
-		
-			console.log(  '------------- store'  );
-			console.log(json2txt(store, ' store> '));
-			console.log('\n\n\n\n');
+//			console.log(json2txt(store, ' store> '));
 			
-//			store.newItem({ identifier : 'id',  items : [] });
+			 
+			var xnode = {'nameLimit': 'Ronald', 'cupoMaximo' : '000' , 'cupoDefecto' : '001' , 'codePackage' : '002' , 'moneda': 'dolar', 'codeLimit':'555'};
+			var add = store.newItem(dojo.mixin({id: 45}, xnode ) );
+			function saveDone(){
+//				  alert("Done saving.");
+				}
+				function saveFailed(){
+//				  alert("Save failed.");
+				}
+				store.save({onComplete: saveDone, onError: saveFailed});
+//			
 			
-			
-			var layout = layoutA;
 			console.log('-->> Definicieno grid');
 			var grid = new dojox.grid.DataGrid({
 				id : 'grid_'+nodes[x].id,
@@ -95,10 +93,9 @@ function getData2Update(dataDWR) {
 		
 			/* append the new grid to the div */
 			// grid.placeAt("gridDiv");
-			console.log("___Asinando en div. RESULTADO:  "+nodes[x].id);
 			grid.placeAt( nodes[x].id );
 //			dojo.byId("gridDiv").appendChild(grid.domNode);
-		
+			
 			/* Call startup() to render the grid */
 			grid.startup();
 		}
@@ -122,4 +119,18 @@ function json2txt(obj, path) {
 		}
 	}
 	return txt;
+}
+
+
+function emailcheck(){
+    var string1=document.example.email.value
+    if (string1.indexOf("@")==-1){
+        alert("Please input a valid email address!")
+        document.example.email.focus()
+    }
+}
+
+//validar
+function emaildasdkja(){
+
 }
