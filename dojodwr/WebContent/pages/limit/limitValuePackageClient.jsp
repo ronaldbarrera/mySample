@@ -24,21 +24,22 @@
 <meta charset="utf-8">
   <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/dojo/1.10.3/dijit/themes/claro/claro.css" />
   <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojox/grid/resources/claroGrid.css" />
-  
+
 <script type='text/javascript' src='<c:url value='/dwr/engine.js'/>'> </script>
 <script type='text/javascript' src="<c:url value='/dwr/util.js'/>"> </script>
-<script type="text/javascript" src="<c:url value='/dwr/interface/LimitValuePackageClientDWR.js'/>"></script>
+<script type="text/javascript" src="<c:url value='/dwr/interface/LimitValuePackageDWR.js'/>"></script>
+
 
  <script src="http://ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojo/dojo.js"
             data-dojo-config="isDebug: true,async: false, parseOnLoad: true">
  </script>
          
- <script type="text/javascript" src="limitValuePackageClient.js"></script>           
+ <script type="text/javascript" src="limitValuePackage.js"></script>           
 </head>
 <body style="font-family: verdana;"  class="claro">
 
 
-<h3>Definición Valor Cupos por Paquete </h3>
+<h3>Definición Valor Cupos por Paquete (Cliente) </h3>
 <table align="center">
 	<tbody>
 		<tr>
@@ -54,22 +55,23 @@
 			Aplica a: <span id="aplicaA"><b><%= pack.getAplicaA() %></b></span>
 			</td>
 		</tr>
-	</tbody>
-</table>
+	</tbody> 
+</table> 
 <br />
-
+ 
 <% 
 for(CustomLevel item : listaCL){
 %>
 <h4 style="width: 20%;background: #555;color:white">
 	<span id="blockTitle" title="code" ><%= item.getName() %></span>
 	</h4>
-  <div id="gridDiv" style="height: 20em;"></div>
+  <div id="gridDiv<%= item.getCode() %>" class="jsDataGrid"  style="height: 20em;"></div>
 <br />
+
+<a href="#" id="linkNuevo<%= item.getCode() %>"  class="linkNuevoJs"   > + Nuevo</a>
 <br />
-<% } %>
-
-
-
+<% } %>  
+ 
+  
    </body>
    </html>

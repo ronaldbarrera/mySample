@@ -19,14 +19,19 @@ function getData2Update(dataDWR) {
 		  			    	//console.log("this.grid> "+this.grid);
 		  			    	//  alert(rowdata['id']);
 		  			    	console.log(json2txt(col, ' col> '));
-		  			    	console.log(json2txt(grid.store, ' gridStore> '));
+		  			    	console.log(' gridStore1>> ');
 		  			    	for (var i = 0, itemSeleccionado; itemSeleccionado = grid.store[ i++];) {
+		  			    		console.log(' gridStore2>> ');
 		  			    		console.log(json2txt(itemSeleccionado, ' stItem> '));
 		  			    			
 		  			    	}
+		  			    	console.log(' gridStore3>> ');
 		  			    	  console.log( grid.store);
+		  			    	console.log(' gridStore4>> ');
 		  			    	 console.log(  grid.store[rowIndex] );
+		  			    	console.log(' gridStore5>> ');
 		  			    	store.deleteItem(  grid.store[rowIndex] );
+		  			    	
 		  			    	store.save({onComplete: saveDone, onError: saveFailed});
 		  			    	
 		  			    	  var item = grid.selection.getSelected();

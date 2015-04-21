@@ -16,21 +16,35 @@ public class Samples {
 		pkg.setCodePackage(""+Samples.randBetween(1, 185));
 		pkg.setNamePackage("Paquete de Limites y Transacciones");
 		pkg.setAplicaA("Empresas");
+		pkg.setCodUsuario("001");
+		pkg.setNomUsuario("Jose");
 		return pkg;
 	}
 	
 	public static List<CustomLevel> getCustomLevels(){
 		List<CustomLevel> lc = new ArrayList<CustomLevel>();
 		CustomLevel cl = new CustomLevel();
-		String txt1 = Samples.randText(randBetween(20, 333));
 		cl.setCode("45");
-		cl.setName(txt1);
+		cl.setName("Transaccion1");
+		
+		CustomLevel cp = new CustomLevel();
+		cp.setCode("01");
+		cp.setName("Canal");
+		cl.setPersonaliLevel(new ArrayList<CustomLevel>());
+		cl.getPersonaliLevel().add(cp);
+		
+		
+		CustomLevel cp2 = new CustomLevel();
+		cp2.setCode("02");
+		cp2.setName("Forma Pago");
+		
+		cl.getPersonaliLevel().add(cp2);
+		
 		lc.add(cl);
 		
 		CustomLevel cl2 = new CustomLevel();
-		String txt2 = Samples.randText(randBetween(20, 333));
 		cl2.setCode("777");
-		cl2.setName(txt2);
+		cl2.setName("Transaccion2");
 		lc.add(cl2);
 //		CustomLevel cl3 = new CustomLevel();
 //		String txt3 = Samples.randText(randBetween(20, 333));
@@ -50,9 +64,20 @@ public class Samples {
 //		lv.setCustonLevel(lc);
 		lv.setCodeLimit(""+randBetween(10, 25));
 		lv.setNameLimit("Limite Diaro");
-		lv.setCupoMaximo(new BigDecimal(""+randBetween(1000, 2500)));
-		lv.setCupoDefecto(new BigDecimal(""+randBetween(800, 7500)));
+		lv.setCupoMaximo(new BigDecimal("11"));
+		lv.setCupoDefecto(new BigDecimal("12"));
 		lista.add(lv);
+		
+		LimitView lv1 =new LimitView();
+		lv1.setCodePackage("45");
+//		lv.setNamePackage("Paquete de Limites y Transacciones");
+//		lv.setAplicaA("Empresas");
+//		lv.setCustonLevel(lc);
+		lv1.setCodeLimit(""+randBetween(10, 25));
+		lv1.setNameLimit("Limite Diaro");
+		lv1.setCupoMaximo(new BigDecimal("14"));
+		lv1.setCupoDefecto(new BigDecimal("15"));
+		lista.add(lv1);
 		
 		LimitView lv2 =new LimitView();
 		lv2.setCodePackage("777");
@@ -60,8 +85,8 @@ public class Samples {
 //		lv2.setAplicaA("Empresas");
 		lv2.setCodeLimit(""+randBetween(10, 25));
 		lv2.setNameLimit("Limite Semanal");
-		lv2.setCupoMaximo(new BigDecimal(""+randBetween(800, 7500)));
-		lv2.setCupoDefecto(new BigDecimal(""+randBetween(800, 7500)));
+		lv2.setCupoMaximo(new BigDecimal("10"));
+		lv2.setCupoDefecto(new BigDecimal("09"));
 		lista.add(lv2);
 		
 		LimitView lv3 =new LimitView();
@@ -71,7 +96,7 @@ public class Samples {
 		lv3.setCodeLimit(""+randBetween(10, 25));
 		lv3.setNameLimit("Limite Mensual");
 		lv3.setCupoMaximo(new BigDecimal("1000"));
-		lv3.setCupoDefecto(new BigDecimal(""+randBetween(800, 7500)));
+		lv3.setCupoDefecto(new BigDecimal("08"));
 		lista.add(lv3);
 		return lista;
 		

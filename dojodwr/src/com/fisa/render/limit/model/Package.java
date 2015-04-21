@@ -4,6 +4,8 @@ public class Package {
 	private String codePackage;
 	private String namePackage;
 	private String aplicaA;
+	private String codUsuario;
+	private String nomUsuario;
 	
 	public String getCodePackage() {
 		return codePackage;
@@ -22,6 +24,18 @@ public class Package {
 	}
 	public void setAplicaA(String aplicaA) {
 		this.aplicaA = aplicaA;
+	}
+	public String getCodUsuario() {
+		return codUsuario;
+	}
+	public void setCodUsuario(String codUsuario) {
+		this.codUsuario = codUsuario;
+	}
+	public String getNomUsuario() {
+		return nomUsuario;
+	}
+	public void setNomUsuario(String nomUsuario) {
+		this.nomUsuario = nomUsuario;
 	}
 	
 	

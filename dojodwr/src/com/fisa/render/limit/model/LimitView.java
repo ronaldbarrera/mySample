@@ -11,6 +11,7 @@ public class LimitView {
 	private BigDecimal cupoMaximo;
 	private BigDecimal cupoDefecto;
 	
+	
 	private boolean  deleted=false;
 	private boolean  updated=false;
 	
@@ -62,6 +63,7 @@ public class LimitView {
 	public void setUpdated(boolean updated) {
 		this.updated = updated;
 	}
+
 	
 
 	
