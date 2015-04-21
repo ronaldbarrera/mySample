@@ -152,8 +152,11 @@
                         }else if(!valinTransDef.value){
                             alert('Valor Tranferencias Maxima por Defecto es Nulo');
                             return false;
-	                    }else if(valinCupoMax < valinCupoDefecto){
+	                    }else if(!(valinCupoDefecto.value < valinCupoMax.value)){
                             alert('Valor Cupo Maximo debe ser mayor a cupo por defecto');
+                            return false;
+	                    }else if(!(valinTransDef.value < valinTransMax.value)){
+                            alert('Valor Tranferencia Maximo debe ser mayor a Tranferencia Defecto');
                             return false;
 	                    }else{
 	                            alert("todo esta correcto");
